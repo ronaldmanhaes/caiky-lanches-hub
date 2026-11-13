@@ -764,28 +764,7 @@
       transform: scale(1.05);
       opacity: 0.95;
     }
-    .food-wa-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: #25D366;
-      color: #FFFFFF !important;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-      box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3);
-      flex-shrink: 0;
-    }
-    .food-wa-btn:hover {
-      transform: scale(1.1);
-    }
-    .food-wa-btn svg {
-      width: 14px;
-      height: 14px;
-      fill: #FFFFFF;
-    }
+    
 
   
     /* Aliases and Safety Fallbacks */
@@ -843,6 +822,188 @@
     }
     .modal-copy-btn:active {
       transform: scale(0.98) !important;
+    }
+
+  
+    /* ════════════════════════════════════════════════════════════════
+       ULTRA-POLISHED MICRO-INTERACTIONS & MOTION (Make-Interfaces-Feel-Better)
+       ════════════════════════════════════════════════════════════════ */
+
+    /* 1. Pill Buttons - Elevating 3D Lift & Specular Glow */
+    .pill-btn {
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 0.2s ease,
+                  border-color 0.2s ease !important;
+      will-change: transform, box-shadow;
+    }
+    .pill-btn:hover {
+      transform: translateY(-3px) scale(1.02) !important;
+    }
+    .pill-btn:active {
+      transform: scale(0.975) translateY(0) !important;
+      transition-duration: 0.08s !important;
+    }
+    
+    /* Dedicated Glows per Pill Type */
+    .pill-btn-delivery:hover {
+      box-shadow: 0 12px 28px rgba(217, 37, 37, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-whatsapp:hover {
+      box-shadow: 0 12px 28px rgba(30, 190, 93, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-wifi:hover {
+      box-shadow: 0 12px 28px rgba(240, 155, 19, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-review:hover {
+      box-shadow: 0 12px 28px rgba(245, 166, 35, 0.30), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-maps:hover, .pill-btn-instagram:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.22) !important;
+    }
+    body:not(.dark-mode) .pill-btn-maps:hover, body:not(.dark-mode) .pill-btn-instagram:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+      border-color: rgba(0, 0, 0, 0.16) !important;
+    }
+
+    /* 2. Micro-movement on Mini-Art Icons & Arrows */
+    .mini-art-icon {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      will-change: transform;
+    }
+    .pill-btn:hover .mini-art-icon {
+      transform: scale(1.09) rotate(-1.5deg) !important;
+    }
+    .pill-arrow svg {
+      transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+    .pill-btn:hover .pill-arrow svg {
+      transform: translateX(5px) !important;
+    }
+
+    /* 3. Social Icons Hover */
+    .social-icon {
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.22s ease, 
+                  background-color 0.2s ease !important;
+    }
+    .social-icon:hover {
+      transform: translateY(-4px) scale(1.12) !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18) !important;
+    }
+    .social-icon:active {
+      transform: scale(0.93) !important;
+    }
+
+    /* 4. Theme Toggle Button Hover */
+    .theme-toggle {
+      transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
+    }
+    .theme-toggle:hover {
+      transform: scale(1.12) rotate(15deg) !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important;
+    }
+    .theme-toggle:active {
+      transform: scale(0.90) !important;
+    }
+
+    /* 5. Food Carousel Dynamic Movement & Snap */
+    .food-carousel {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 0 16px;
+      cursor: grab;
+      user-select: none;
+      padding-top: 6px;
+      padding-bottom: 14px;
+    }
+    .food-carousel.grabbing {
+      cursor: grabbing !important;
+      scroll-snap-type: none !important;
+      scroll-behavior: auto !important;
+    }
+    
+    .food-card {
+      scroll-snap-align: start;
+      transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.26s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s ease !important;
+      will-change: transform, box-shadow;
+    }
+    .food-card:hover {
+      transform: translateY(-6px) scale(1.03) !important;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.10) !important;
+      border-color: rgba(217, 37, 37, 0.45) !important;
+    }
+    .food-card:active {
+      transform: scale(0.97) !important;
+    }
+    .food-img-wrap {
+      overflow: hidden;
+    }
+    .food-img {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .food-card:hover .food-img {
+      transform: scale(1.08) !important;
+    }
+
+    /* 6. Food Badge Button (Peça Já) */
+    .food-badge-btn {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease !important;
+    }
+    .food-badge-btn:hover, .food-card:hover .food-badge-btn {
+      transform: scale(1.06) !important;
+      filter: brightness(1.1) !important;
+      box-shadow: 0 4px 12px rgba(217, 37, 37, 0.45) !important;
+    }
+    .food-badge-btn svg {
+      transition: transform 0.2s ease !important;
+    }
+    .food-badge-btn:hover svg, .food-card:hover .food-badge-btn svg {
+      transform: translateX(3px) !important;
+    }
+
+    /* 7. Carousel Navigation Arrows in Section Header */
+    .carousel-nav-arrows {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 4px;
+    }
+    .carousel-arrow-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  background-color 0.18s ease, 
+                  box-shadow 0.18s ease;
+    }
+    .carousel-arrow-btn:hover {
+      transform: scale(1.15);
+      background: var(--caiky-red);
+      color: #FFFFFF;
+      border-color: var(--caiky-red);
+      box-shadow: 0 3px 10px rgba(217, 37, 37, 0.35);
+    }
+    .carousel-arrow-btn:active {
+      transform: scale(0.92);
     }
 
   </style>
@@ -1127,9 +1288,21 @@
     </section>
 
     <!-- Visual Food Section: Campeões da Casa (FOTOS REAIS ANOTA AÍ) -->
-    <div class="section-header">
+        <div class="section-header">
       <span class="section-title">Mais Pedidos da Casa</span>
-      <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="section-subtitle">Ver Cardápio Completo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="section-subtitle">
+          Ver Cardápio <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="carousel-nav-arrows">
+          <button class="carousel-arrow-btn" onclick="scrollCarousel(-1)" title="Ver anteriores" aria-label="Item anterior">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-arrow-btn" onclick="scrollCarousel(1)" title="Ver próximos" aria-label="Próximo item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="food-carousel">
@@ -1143,12 +1316,7 @@
           <div class="food-name" onclick="window.open('https://pedido.anota.ai/loja/caikylanches', '_blank')" style="cursor:pointer;" title="Ver Lanches Especiais no Cardápio Anota Aí">Lanches Especiais</div>
           <div class="food-action-row">
             <span class="food-cat-tag">Artesanais</span>
-            <div class="food-btn-group">
-              <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://wa.me/5522999971096?text=Ol%C3%A1!%20Vi%20os%20Lanches%20Artesanais%20na%20Bio%20e%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="food-wa-btn" title="Pedir Lanches Especiais via WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.532 1.77.813 2.776.813 3.18 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.767-5.763-5.767zm3.387 8.204c-.143.4-.827.778-1.144.827-.318.049-.731.07-2.222-.547-1.785-.738-2.923-2.56-3.012-2.679-.089-.119-.724-.962-.724-1.834 0-.872.457-1.301.62-1.478.163-.178.356-.222.474-.222.119 0 .238.001.342.006.109.005.253-.041.396.302.149.356.505 1.233.55 1.322.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.461.761.989 1.232.68.607 1.254.795 1.432.884.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.4-.089.163.059 1.033.487 1.211.576.178.089.297.133.342.208.045.074.045.43-.098.83z"/></svg>
-              </a>
-            </div>
+            <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1163,12 +1331,7 @@
           <div class="food-name" onclick="window.open('https://pedido.anota.ai/loja/caikylanches', '_blank')" style="cursor:pointer;" title="Ver Batata na Caixa de Pizza no Cardápio Anota Aí">Batata na Caixa de Pizza</div>
           <div class="food-action-row">
             <span class="food-cat-tag">Recheada</span>
-            <div class="food-btn-group">
-              <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://wa.me/5522999971096?text=Ol%C3%A1!%20Vi%20a%20Batata%20na%20Caixa%20de%20Pizza%20na%20Bio%20e%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="food-wa-btn" title="Pedir Batata na Caixa de Pizza via WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.532 1.77.813 2.776.813 3.18 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.767-5.763-5.767zm3.387 8.204c-.143.4-.827.778-1.144.827-.318.049-.731.07-2.222-.547-1.785-.738-2.923-2.56-3.012-2.679-.089-.119-.724-.962-.724-1.834 0-.872.457-1.301.62-1.478.163-.178.356-.222.474-.222.119 0 .238.001.342.006.109.005.253-.041.396.302.149.356.505 1.233.55 1.322.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.461.761.989 1.232.68.607 1.254.795 1.432.884.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.4-.089.163.059 1.033.487 1.211.576.178.089.297.133.342.208.045.074.045.43-.098.83z"/></svg>
-              </a>
-            </div>
+            <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1183,12 +1346,7 @@
           <div class="food-name" onclick="window.open('https://pedido.anota.ai/loja/caikylanches', '_blank')" style="cursor:pointer;" title="Ver Pizzas Especiais no Cardápio Anota Aí">Pizzas Especiais</div>
           <div class="food-action-row">
             <span class="food-cat-tag">Massa Leve</span>
-            <div class="food-btn-group">
-              <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://wa.me/5522999971096?text=Ol%C3%A1!%20Vi%20as%20Pizzas%20Especiais%20na%20Bio%20e%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="food-wa-btn" title="Pedir Pizzas Especiais via WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.532 1.77.813 2.776.813 3.18 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.767-5.763-5.767zm3.387 8.204c-.143.4-.827.778-1.144.827-.318.049-.731.07-2.222-.547-1.785-.738-2.923-2.56-3.012-2.679-.089-.119-.724-.962-.724-1.834 0-.872.457-1.301.62-1.478.163-.178.356-.222.474-.222.119 0 .238.001.342.006.109.005.253-.041.396.302.149.356.505 1.233.55 1.322.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.461.761.989 1.232.68.607 1.254.795 1.432.884.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.4-.089.163.059 1.033.487 1.211.576.178.089.297.133.342.208.045.074.045.43-.098.83z"/></svg>
-              </a>
-            </div>
+            <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1203,12 +1361,7 @@
           <div class="food-name" onclick="window.open('https://pedido.anota.ai/loja/caikylanches', '_blank')" style="cursor:pointer;" title="Ver Pastéis Super Recheados no Cardápio Anota Aí">Pastéis Super Recheados</div>
           <div class="food-action-row">
             <span class="food-cat-tag">Crocante</span>
-            <div class="food-btn-group">
-              <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://wa.me/5522999971096?text=Ol%C3%A1!%20Vi%20os%20Past%C3%A9is%20na%20Bio%20e%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="food-wa-btn" title="Pedir Pastéis Super Recheados via WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.532 1.77.813 2.776.813 3.18 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.767-5.763-5.767zm3.387 8.204c-.143.4-.827.778-1.144.827-.318.049-.731.07-2.222-.547-1.785-.738-2.923-2.56-3.012-2.679-.089-.119-.724-.962-.724-1.834 0-.872.457-1.301.62-1.478.163-.178.356-.222.474-.222.119 0 .238.001.342.006.109.005.253-.041.396.302.149.356.505 1.233.55 1.322.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.461.761.989 1.232.68.607 1.254.795 1.432.884.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.4-.089.163.059 1.033.487 1.211.576.178.089.297.133.342.208.045.074.045.43-.098.83z"/></svg>
-              </a>
-            </div>
+            <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1223,12 +1376,7 @@
           <div class="food-name" onclick="window.open('https://pedido.anota.ai/loja/caikylanches', '_blank')" style="cursor:pointer;" title="Ver Açaí Tradicional no Copo no Cardápio Anota Aí">Açaí Tradicional no Copo</div>
           <div class="food-action-row">
             <span class="food-cat-tag">Cremoso</span>
-            <div class="food-btn-group">
-              <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://wa.me/5522999971096?text=Ol%C3%A1!%20Vi%20o%20A%C3%A7a%C3%AD%20na%20Bio%20e%20gostaria%20de%20fazer%20um%20pedido!" target="_blank" class="food-wa-btn" title="Pedir Açaí Tradicional no Copo via WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.599 2.679-.702c.971.532 1.77.813 2.776.813 3.18 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.767-5.763-5.767zm3.387 8.204c-.143.4-.827.778-1.144.827-.318.049-.731.07-2.222-.547-1.785-.738-2.923-2.56-3.012-2.679-.089-.119-.724-.962-.724-1.834 0-.872.457-1.301.62-1.478.163-.178.356-.222.474-.222.119 0 .238.001.342.006.109.005.253-.041.396.302.149.356.505 1.233.55 1.322.045.089.074.193.015.312-.059.119-.089.193-.178.297-.089.104-.187.232-.267.312-.089.089-.182.186-.078.364.104.178.461.761.989 1.232.68.607 1.254.795 1.432.884.178.089.282.074.386-.045.104-.119.445-.519.564-.697.119-.178.238-.149.4-.089.163.059 1.033.487 1.211.576.178.089.297.133.342.208.045.074.045.43-.098.83z"/></svg>
-              </a>
-            </div>
+            <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="food-badge-btn" title="Abrir Cardápio Anota Aí">Peça Já <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -1266,6 +1414,74 @@
         if (icon) icon.innerText = '☀️';
       }
     })();
-  </script>
+  
+// ── Smooth Drag-to-Scroll & Navigation for Carousel ──
+(function setupCarouselControls() {
+  const carousel = document.querySelector('.food-carousel');
+  if (!carousel) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let hasMoved = false;
+
+  const getClientX = (e) => {
+    if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+    return e.clientX ?? e.pageX ?? 0;
+  };
+
+  const startDrag = (e) => {
+    if (e.button && e.button !== 0) return;
+    isDown = true;
+    hasMoved = false;
+    carousel.classList.add('grabbing');
+    startX = getClientX(e) - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  };
+
+  const doDrag = (e) => {
+    if (!isDown) return;
+    const clientX = getClientX(e);
+    const x = clientX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.6;
+    if (Math.abs(walk) > 4) {
+      hasMoved = true;
+      carousel.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const endDrag = () => {
+    if (isDown) {
+      isDown = false;
+      carousel.classList.remove('grabbing');
+    }
+  };
+
+  carousel.addEventListener('mousedown', startDrag);
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('mousemove', doDrag);
+
+  carousel.addEventListener('touchstart', startDrag, { passive: true });
+  carousel.addEventListener('touchend', endDrag);
+  carousel.addEventListener('touchmove', doDrag, { passive: true });
+
+  carousel.querySelectorAll('.food-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
+})();
+
+function scrollCarousel(dir) {
+  const carousel = document.querySelector('.food-carousel');
+  if (!carousel) return;
+  const cardWidth = 160;
+  carousel.scrollBy({ left: dir * cardWidth * 1.6, behavior: 'smooth' });
+}
+
+</script>
 </body>
 </html>

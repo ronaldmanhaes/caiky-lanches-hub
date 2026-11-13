@@ -748,6 +748,188 @@
       transform: scale(0.98) !important;
     }
 
+  
+    /* ════════════════════════════════════════════════════════════════
+       ULTRA-POLISHED MICRO-INTERACTIONS & MOTION (Make-Interfaces-Feel-Better)
+       ════════════════════════════════════════════════════════════════ */
+
+    /* 1. Pill Buttons - Elevating 3D Lift & Specular Glow */
+    .pill-btn {
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  filter 0.2s ease,
+                  border-color 0.2s ease !important;
+      will-change: transform, box-shadow;
+    }
+    .pill-btn:hover {
+      transform: translateY(-3px) scale(1.02) !important;
+    }
+    .pill-btn:active {
+      transform: scale(0.975) translateY(0) !important;
+      transition-duration: 0.08s !important;
+    }
+    
+    /* Dedicated Glows per Pill Type */
+    .pill-btn-delivery:hover {
+      box-shadow: 0 12px 28px rgba(217, 37, 37, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-whatsapp:hover {
+      box-shadow: 0 12px 28px rgba(30, 190, 93, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-wifi:hover {
+      box-shadow: 0 12px 28px rgba(240, 155, 19, 0.38), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-review:hover {
+      box-shadow: 0 12px 28px rgba(245, 166, 35, 0.30), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      filter: brightness(1.04) !important;
+    }
+    .pill-btn-maps:hover, .pill-btn-instagram:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+      border-color: rgba(255, 255, 255, 0.22) !important;
+    }
+    body:not(.dark-mode) .pill-btn-maps:hover, body:not(.dark-mode) .pill-btn-instagram:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+      border-color: rgba(0, 0, 0, 0.16) !important;
+    }
+
+    /* 2. Micro-movement on Mini-Art Icons & Arrows */
+    .mini-art-icon {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      will-change: transform;
+    }
+    .pill-btn:hover .mini-art-icon {
+      transform: scale(1.09) rotate(-1.5deg) !important;
+    }
+    .pill-arrow svg {
+      transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+    .pill-btn:hover .pill-arrow svg {
+      transform: translateX(5px) !important;
+    }
+
+    /* 3. Social Icons Hover */
+    .social-icon {
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.22s ease, 
+                  background-color 0.2s ease !important;
+    }
+    .social-icon:hover {
+      transform: translateY(-4px) scale(1.12) !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18) !important;
+    }
+    .social-icon:active {
+      transform: scale(0.93) !important;
+    }
+
+    /* 4. Theme Toggle Button Hover */
+    .theme-toggle {
+      transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
+    }
+    .theme-toggle:hover {
+      transform: scale(1.12) rotate(15deg) !important;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) !important;
+    }
+    .theme-toggle:active {
+      transform: scale(0.90) !important;
+    }
+
+    /* 5. Food Carousel Dynamic Movement & Snap */
+    .food-carousel {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 0 16px;
+      cursor: grab;
+      user-select: none;
+      padding-top: 6px;
+      padding-bottom: 14px;
+    }
+    .food-carousel.grabbing {
+      cursor: grabbing !important;
+      scroll-snap-type: none !important;
+      scroll-behavior: auto !important;
+    }
+    
+    .food-card {
+      scroll-snap-align: start;
+      transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.26s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s ease !important;
+      will-change: transform, box-shadow;
+    }
+    .food-card:hover {
+      transform: translateY(-6px) scale(1.03) !important;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.10) !important;
+      border-color: rgba(217, 37, 37, 0.45) !important;
+    }
+    .food-card:active {
+      transform: scale(0.97) !important;
+    }
+    .food-img-wrap {
+      overflow: hidden;
+    }
+    .food-img {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .food-card:hover .food-img {
+      transform: scale(1.08) !important;
+    }
+
+    /* 6. Food Badge Button (Peça Já) */
+    .food-badge-btn {
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  box-shadow 0.2s ease, 
+                  filter 0.2s ease !important;
+    }
+    .food-badge-btn:hover, .food-card:hover .food-badge-btn {
+      transform: scale(1.06) !important;
+      filter: brightness(1.1) !important;
+      box-shadow: 0 4px 12px rgba(217, 37, 37, 0.45) !important;
+    }
+    .food-badge-btn svg {
+      transition: transform 0.2s ease !important;
+    }
+    .food-badge-btn:hover svg, .food-card:hover .food-badge-btn svg {
+      transform: translateX(3px) !important;
+    }
+
+    /* 7. Carousel Navigation Arrows in Section Header */
+    .carousel-nav-arrows {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 4px;
+    }
+    .carousel-arrow-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  background-color 0.18s ease, 
+                  box-shadow 0.18s ease;
+    }
+    .carousel-arrow-btn:hover {
+      transform: scale(1.15);
+      background: var(--caiky-red);
+      color: #FFFFFF;
+      border-color: var(--caiky-red);
+      box-shadow: 0 3px 10px rgba(217, 37, 37, 0.35);
+    }
+    .carousel-arrow-btn:active {
+      transform: scale(0.92);
+    }
+
   </style>
 </head>
 <body class="dark-mode">
@@ -1142,9 +1324,21 @@
     </section>
 
     <!-- Visual Food Section: Campeões da Casa (FOTOS REAIS ANOTA AÍ) -->
-    <div class="section-header">
+        <div class="section-header">
       <span class="section-title">Mais Pedidos da Casa</span>
-      <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="section-subtitle">Ver Cardápio Completo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:3px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a href="https://pedido.anota.ai/loja/caikylanches" target="_blank" class="section-subtitle">
+          Ver Cardápio <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-left:2px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <div class="carousel-nav-arrows">
+          <button class="carousel-arrow-btn" onclick="scrollCarousel(-1)" title="Ver anteriores" aria-label="Item anterior">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-arrow-btn" onclick="scrollCarousel(1)" title="Ver próximos" aria-label="Próximo item">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
 
     <div class="food-carousel">
@@ -1353,6 +1547,74 @@
         if (icon) icon.innerText = '☀️';
       }
     })();
-  </script>
+  
+// ── Smooth Drag-to-Scroll & Navigation for Carousel ──
+(function setupCarouselControls() {
+  const carousel = document.querySelector('.food-carousel');
+  if (!carousel) return;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  let hasMoved = false;
+
+  const getClientX = (e) => {
+    if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+    return e.clientX ?? e.pageX ?? 0;
+  };
+
+  const startDrag = (e) => {
+    if (e.button && e.button !== 0) return;
+    isDown = true;
+    hasMoved = false;
+    carousel.classList.add('grabbing');
+    startX = getClientX(e) - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  };
+
+  const doDrag = (e) => {
+    if (!isDown) return;
+    const clientX = getClientX(e);
+    const x = clientX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.6;
+    if (Math.abs(walk) > 4) {
+      hasMoved = true;
+      carousel.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const endDrag = () => {
+    if (isDown) {
+      isDown = false;
+      carousel.classList.remove('grabbing');
+    }
+  };
+
+  carousel.addEventListener('mousedown', startDrag);
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('mousemove', doDrag);
+
+  carousel.addEventListener('touchstart', startDrag, { passive: true });
+  carousel.addEventListener('touchend', endDrag);
+  carousel.addEventListener('touchmove', doDrag, { passive: true });
+
+  carousel.querySelectorAll('.food-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
+})();
+
+function scrollCarousel(dir) {
+  const carousel = document.querySelector('.food-carousel');
+  if (!carousel) return;
+  const cardWidth = 160;
+  carousel.scrollBy({ left: dir * cardWidth * 1.6, behavior: 'smooth' });
+}
+
+</script>
 </body>
 </html>
