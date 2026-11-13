@@ -1,0 +1,3 @@
+# Redirect legacy /bio to public root /
+/bio  /  301
+/bio.html  /  301
