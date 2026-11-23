@@ -927,7 +927,7 @@
     }
 
   </style>
-<style>.approval-nav{position:relative;z-index:1;width:min(446px,calc(100% - 32px));margin:20px auto 0;font:12px Arial;color:inherit}.approval-nav>a{color:inherit;text-decoration:none}.approval-nav>span{float:right;font-size:9px}.approval-nav>div{display:flex;padding:4px;gap:4px;margin-top:20px;border:1px solid #b58b55;border-radius:12px}.approval-nav>div>a{flex:1;min-height:44px;display:grid;place-items:center;color:inherit;text-decoration:none;border-radius:8px}.approval-nav a[aria-current=true]{background:#ffc34a;color:#45200f;font-weight:bold}</style><style>/* Mobile correction: preserve the original layout while avoiding squeezed CTAs. */.food-action-row{flex-wrap:wrap;gap:8px}.food-action-row>span:first-child{min-width:0;overflow-wrap:anywhere}.food-badge-btn{white-space:nowrap;flex-shrink:0;min-height:32px;justify-content:center}.food-name{overflow-wrap:anywhere}</style><style>.approval-nav{margin-bottom:28px!important;padding-bottom:4px!important}.approval-nav>div{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:4px!important;overflow:hidden;isolation:isolate}.approval-nav>div>a{display:flex!important;align-items:center;justify-content:center;min-width:0;min-height:48px!important;padding:8px 10px!important;box-sizing:border-box;font-size:13px!important;line-height:1.3!important;white-space:nowrap;touch-action:manipulation}.approval-nav>div>a:focus-visible{outline:2px solid #ffc34a;outline-offset:-3px}.approval-nav a[aria-current=true]{box-shadow:0 1px 4px #0002}</style></head>
+<style>.approval-nav{position:relative;z-index:1;width:min(446px,calc(100% - 32px));margin:20px auto 0;font:12px Arial;color:inherit}.approval-nav>a{color:inherit;text-decoration:none}.approval-nav>span{float:right;font-size:9px}.approval-nav>div{display:flex;padding:4px;gap:4px;margin-top:20px;border:1px solid #b58b55;border-radius:12px}.approval-nav>div>a{flex:1;min-height:44px;display:grid;place-items:center;color:inherit;text-decoration:none;border-radius:8px}.approval-nav a[aria-current=true]{background:#ffc34a;color:#45200f;font-weight:bold}</style><style>/* Mobile correction: preserve the original layout while avoiding squeezed CTAs. */.food-action-row{flex-wrap:wrap;gap:8px}.food-action-row>span:first-child{min-width:0;overflow-wrap:anywhere}.food-badge-btn{white-space:nowrap;flex-shrink:0;min-height:32px;justify-content:center}.food-name{overflow-wrap:anywhere}</style><style>.approval-nav{margin-bottom:28px!important;padding-bottom:4px!important}.approval-nav>div{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:4px!important;overflow:hidden;isolation:isolate}.approval-nav>div>a{display:flex!important;align-items:center;justify-content:center;min-width:0;min-height:48px!important;padding:8px 10px!important;box-sizing:border-box;font-size:13px!important;line-height:1.3!important;white-space:nowrap;touch-action:manipulation}.approval-nav>div>a:focus-visible{outline:2px solid #ffc34a;outline-offset:-3px}.approval-nav a[aria-current=true]{box-shadow:0 1px 4px #0002}</style><style>#cardReview{text-decoration:none;color:inherit;cursor:pointer}#cardReview:focus-visible{outline:3px solid #F5A623;outline-offset:4px}#cardReview .star-btn{pointer-events:none}</style></head>
 <body class="dark-mode"><div class="approval-nav"><a href="bios.html">← Comparar versões</a><span>VERSÃO 1 · ORIGINAL</span><div><a aria-current="true" href="v1-mesa.html">Na mesa</a><a aria-current="false" href="v1.html">Na bio</a></div></div>
 <!-- Hidden copy fallback input -->
 <textarea id="copyBuffer" style="position: absolute; left: -9999px; top: -9999px; opacity: 0;"></textarea>
@@ -1155,7 +1155,7 @@
 </div>
 </div>
 <!-- 4. Pill: Avaliação 5 Estrelas no Google -->
-<div class="pill-btn pill-btn-review" id="cardReview">
+<a class="pill-btn pill-btn-review" id="cardReview" href="https://search.google.com/local/writereview?placeid=ChIJs1o0yUcklgARqbLuGIj5s2k" target="_blank" rel="noopener noreferrer" aria-label="Avaliar o Caiky Lanches no Google (abre em nova aba)">
 <div class="review-top">
 <div style="display:flex; align-items:center; gap:12px;">
 <svg class="mini-art-icon" height="46" style="border-radius:12px; overflow:hidden;" viewBox="0 0 64 64" width="46" xmlns="http://www.w3.org/2000/svg">
@@ -1185,17 +1185,17 @@
 </svg>
 <strong style="font-size:16px;">Avalie no Google</strong>
 </div>
-<span style="font-size:11px; font-weight:800; color:#F5A623; background:rgba(245,166,35,0.15); padding:3px 8px; border-radius:12px;">5.0 ★★★★★</span>
+
 </div>
-<div class="stars-bar" id="starsBar">
-<span class="star-btn active" data-star="1" onclick="rateStar(1)">★</span>
-<span class="star-btn active" data-star="2" onclick="rateStar(2)">★</span>
-<span class="star-btn active" data-star="3" onclick="rateStar(3)">★</span>
-<span class="star-btn active" data-star="4" onclick="rateStar(4)">★</span>
-<span class="star-btn active" data-star="5" onclick="rateStar(5)">★</span>
+<div class="stars-bar" id="starsBar" aria-hidden="true">
+<span class="star-btn active" data-star="1">★</span>
+<span class="star-btn active" data-star="2">★</span>
+<span class="star-btn active" data-star="3">★</span>
+<span class="star-btn active" data-star="4">★</span>
+<span class="star-btn active" data-star="5">★</span>
 </div>
-<p class="review-hint" id="reviewHint">Toque nas estrelas para nos avaliar!</p>
-</div>
+<p class="review-hint" id="reviewHint">Conte como foi sua experiência no Google.</p>
+</a>
 <!-- 5. Pill: Nossa Localização (Google Maps) -->
 <a class="pill-btn pill-btn-clean" href="https://maps.google.com/?q=Caiky+Lanches+Lagomar+Macae" id="btnLocalizacao" rel="noopener noreferrer" target="_blank">
 <div class="pill-content-left">
@@ -1453,26 +1453,6 @@
       if (e.target.id === 'qrModal') {
         closeQrModal();
       }
-    }
-
-    // Interactive Star Rating
-    function rateStar(n) {
-      const stars = document.querySelectorAll('.star-btn');
-      stars.forEach((s, idx) => {
-        if (idx < n) {
-          s.classList.add('active');
-        } else {
-          s.classList.remove('active');
-        }
-      });
-
-      const hint = document.getElementById('reviewHint');
-      if (hint) {
-        hint.textContent = '⭐ Obrigado pela avaliação de 5 estrelas!';
-        hint.style.color = '#F5A623';
-      }
-
-      showToast(`Obrigado pela avaliação de ${n} estrelas! ⭐`);
     }
 
     // Dark / Light Theme Toggle (Dark is DEFAULT)
