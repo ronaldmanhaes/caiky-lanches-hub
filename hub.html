@@ -931,7 +931,7 @@
     }
 
   </style>
-</head>
+<style>#cardReview{text-decoration:none;color:inherit;cursor:pointer}#cardReview:focus-visible{outline:3px solid #F5A623;outline-offset:4px}#cardReview .star-btn{pointer-events:none}</style></head>
 <body class="dark-mode">
 
   <!-- Hidden copy fallback input -->
@@ -1187,7 +1187,7 @@
       </div>
 
       <!-- 4. Pill: Avaliação 5 Estrelas no Google -->
-      <div class="pill-btn pill-btn-review" id="cardReview">
+      <a class="pill-btn pill-btn-review" id="cardReview" href="https://search.google.com/local/writereview?placeid=ChIJs1o0yUcklgARqbLuGIj5s2k" target="_blank" rel="noopener noreferrer" aria-label="Avaliar o Caiky Lanches no Google (abre em nova aba)">
         <div class="review-top">
           <div style="display:flex; align-items:center; gap:12px;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="46" height="46" class="mini-art-icon" style="border-radius:12px; overflow:hidden;">
@@ -1217,19 +1217,19 @@
 </svg>
             <strong style="font-size:16px;">Avalie no Google</strong>
           </div>
-          <span style="font-size:11px; font-weight:800; color:#F5A623; background:rgba(245,166,35,0.15); padding:3px 8px; border-radius:12px;">5.0 ★★★★★</span>
+          
         </div>
         
-        <div class="stars-bar" id="starsBar">
-          <span class="star-btn active" data-star="1" onclick="rateStar(1)">★</span>
-          <span class="star-btn active" data-star="2" onclick="rateStar(2)">★</span>
-          <span class="star-btn active" data-star="3" onclick="rateStar(3)">★</span>
-          <span class="star-btn active" data-star="4" onclick="rateStar(4)">★</span>
-          <span class="star-btn active" data-star="5" onclick="rateStar(5)">★</span>
+        <div class="stars-bar" id="starsBar" aria-hidden="true">
+          <span class="star-btn active" data-star="1">★</span>
+          <span class="star-btn active" data-star="2">★</span>
+          <span class="star-btn active" data-star="3">★</span>
+          <span class="star-btn active" data-star="4">★</span>
+          <span class="star-btn active" data-star="5">★</span>
         </div>
 
-        <p class="review-hint" id="reviewHint">Toque nas estrelas para nos avaliar!</p>
-      </div>
+        <p class="review-hint" id="reviewHint">Conte como foi sua experiência no Google.</p>
+      </a>
 
       <!-- 5. Pill: Nossa Localização (Google Maps) -->
       <a href="https://maps.google.com/?q=Caiky+Lanches+Lagomar+Macae" target="_blank" class="pill-btn pill-btn-clean" id="btnLocalizacao" rel="noopener noreferrer">
@@ -1502,26 +1502,6 @@
       if (e.target.id === 'qrModal') {
         closeQrModal();
       }
-    }
-
-    // Interactive Star Rating
-    function rateStar(n) {
-      const stars = document.querySelectorAll('.star-btn');
-      stars.forEach((s, idx) => {
-        if (idx < n) {
-          s.classList.add('active');
-        } else {
-          s.classList.remove('active');
-        }
-      });
-
-      const hint = document.getElementById('reviewHint');
-      if (hint) {
-        hint.textContent = '⭐ Obrigado pela avaliação de 5 estrelas!';
-        hint.style.color = '#F5A623';
-      }
-
-      showToast(`Obrigado pela avaliação de ${n} estrelas! ⭐`);
     }
 
     // Dark / Light Theme Toggle (Dark is DEFAULT)
